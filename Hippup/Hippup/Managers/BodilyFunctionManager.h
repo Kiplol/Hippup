@@ -15,5 +15,6 @@
 
 +(BodilyFunctionManager*)getInstance;
 -(void)saveBodilyFunction:(BodilyFunctionModel*)bf;
--(NSArray*)myBodilyFunctions;
+-(NSArray*)bodilyFunctionsForUser:(NSString*)username;
+-(NSArray*)bodilyFunctionsForUser:(NSString*)username since:(double)timestamp;
 @end

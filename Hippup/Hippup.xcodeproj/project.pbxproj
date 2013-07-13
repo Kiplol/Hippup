@@ -35,6 +35,9 @@
 		3750CCC8179112620040ACB0 /* HUMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3750CCC7179112620040ACB0 /* HUMapViewController.m */; };
 		3750CCCA179112A00040ACB0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3750CCC9179112A00040ACB0 /* MapKit.framework */; };
 		3750CCCD1791E99E0040ACB0 /* BodilyFunctionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3750CCCC1791E99E0040ACB0 /* BodilyFunctionManager.m */; };
+		3750CCD21791F1910040ACB0 /* bg1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3750CCD01791F1910040ACB0 /* bg1.png */; };
+		3750CCD31791F1910040ACB0 /* bg1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3750CCD11791F1910040ACB0 /* bg1@2x.png */; };
+		3750CCD61791F3C10040ACB0 /* HUSessionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3750CCD51791F3C10040ACB0 /* HUSessionData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +77,10 @@
 		3750CCC9179112A00040ACB0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3750CCCB1791E99E0040ACB0 /* BodilyFunctionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BodilyFunctionManager.h; path = Managers/BodilyFunctionManager.h; sourceTree = "<group>"; };
 		3750CCCC1791E99E0040ACB0 /* BodilyFunctionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BodilyFunctionManager.m; path = Managers/BodilyFunctionManager.m; sourceTree = "<group>"; };
+		3750CCD01791F1910040ACB0 /* bg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg1.png; sourceTree = "<group>"; };
+		3750CCD11791F1910040ACB0 /* bg1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg1@2x.png"; sourceTree = "<group>"; };
+		3750CCD41791F3C10040ACB0 /* HUSessionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HUSessionData.h; path = Models/HUSessionData.h; sourceTree = "<group>"; };
+		3750CCD51791F3C10040ACB0 /* HUSessionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HUSessionData.m; path = Models/HUSessionData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +160,7 @@
 				3750CCCE1791F1700040ACB0 /* Managers */,
 				3750CCA61790F3C90040ACB0 /* ViewControllers */,
 				3750CC981790F2F30040ACB0 /* Hippup.xcdatamodeld */,
+				3750CCCF1791F1910040ACB0 /* Resources */,
 				3750CC811790F2F20040ACB0 /* Supporting Files */,
 			);
 			path = Hippup;
@@ -188,6 +196,8 @@
 			children = (
 				3750CCC2179108D10040ACB0 /* BodilyFunctionModel.h */,
 				3750CCC3179108D10040ACB0 /* BodilyFunctionModel.m */,
+				3750CCD41791F3C10040ACB0 /* HUSessionData.h */,
+				3750CCD51791F3C10040ACB0 /* HUSessionData.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -199,6 +209,15 @@
 				3750CCCC1791E99E0040ACB0 /* BodilyFunctionManager.m */,
 			);
 			name = Managers;
+			sourceTree = "<group>";
+		};
+		3750CCCF1791F1910040ACB0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3750CCD01791F1910040ACB0 /* bg1.png */,
+				3750CCD11791F1910040ACB0 /* bg1@2x.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +277,8 @@
 				3750CC8F1790F2F30040ACB0 /* Default@2x.png in Resources */,
 				3750CC911790F2F30040ACB0 /* Default-568h@2x.png in Resources */,
 				3750CC941790F2F30040ACB0 /* MainStoryboard.storyboard in Resources */,
+				3750CCD21791F1910040ACB0 /* bg1.png in Resources */,
+				3750CCD31791F1910040ACB0 /* bg1@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +296,7 @@
 				3750CCC4179108D10040ACB0 /* BodilyFunctionModel.m in Sources */,
 				3750CCC8179112620040ACB0 /* HUMapViewController.m in Sources */,
 				3750CCCD1791E99E0040ACB0 /* BodilyFunctionManager.m in Sources */,
+				3750CCD61791F3C10040ACB0 /* HUSessionData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

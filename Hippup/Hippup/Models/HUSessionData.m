@@ -9,5 +9,18 @@
 #import "HUSessionData.h"
 
 @implementation HUSessionData
+@synthesize username = _szUsername;
+@synthesize myBFs = _arrMyBFs;
 
++(HUSessionData*)getInstance
+{
+    static dispatch_once_t once;
+    static HUSessionData * pInstance;
+    
+    dispatch_once(&once, ^{
+        pInstance = [[HUSessionData alloc] init];
+    });
+    
+    return pInstance;
+}
 @end

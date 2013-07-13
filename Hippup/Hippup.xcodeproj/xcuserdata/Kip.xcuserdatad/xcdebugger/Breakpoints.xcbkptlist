@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Hippup/ViewControllers/HUDashboardViewController.m"
-         timestampString = "395439617.231543"
+         timestampString = "395442126.595195"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "81"
-         endingLineNumber = "81"
+         startingLineNumber = "71"
+         endingLineNumber = "71"
          landmarkName = "-locationManager:didFailWithError:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -27,6 +27,19 @@
          startingLineNumber = "60"
          endingLineNumber = "60"
          landmarkName = "-saveContext"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Hippup/BodilyFunctionModel.m"
+         timestampString = "395440852.205337"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "103"
+         endingLineNumber = "103"
+         landmarkName = "+typeForString:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

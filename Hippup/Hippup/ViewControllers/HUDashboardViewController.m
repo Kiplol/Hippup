@@ -28,10 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
-    BodilyFunctionManager * bfm = [[BodilyFunctionManager alloc] init];
-    [bfm myBodilyFunctions];
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)didReceiveMemoryWarning

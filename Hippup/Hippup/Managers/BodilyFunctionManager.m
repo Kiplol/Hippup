@@ -43,7 +43,11 @@
     [context save:&error];
 }
 
--(NSArray*)myBodilyFunctions
+-(NSArray*)bodilyFunctionsForUser:(NSString*)username
+{
+    return [self bodilyFunctionsForUser:username since:0];
+}
+-(NSArray*)bodilyFunctionsForUser:(NSString*)username since:(double)timestamp
 {
     HUAppDelegate *appDelegate =
     [[UIApplication sharedApplication] delegate];
@@ -58,9 +62,21 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entityDesc];
     
-    NSPredicate *pred =
-    [NSPredicate predicateWithFormat:@"(username = %@)", [PFUser currentUser].username];
-    [request setPredicate:pred];
+    NSPredicate * usernamePred = [NSPredicate predicateWithFormat:@"(username = %@)", username];
+    NSPredicate * timestampPred = [NSPredicate predicateWithFormat:@"(timestamp >= %f)", timestamp];
+    if(username && timestamp > -1)
+    {
+        NSPredicate * compoundPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[usernamePred, timestampPred]];
+        [request setPredicate:compoundPredicate];
+    }
+    else if(username)
+    {
+        [request setPredicate:usernamePred];
+    }
+    else if(timestamp > -1)
+    {
+        [request setPredicate:timestampPred];
+    }
     
     NSError *error;
     NSArray *objects = [context executeFetchRequest:request

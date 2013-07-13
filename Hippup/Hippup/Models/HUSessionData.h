@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HUSessionData : NSObject
+@interface HUSessionData : NSObject {
+    NSMutableArray * _arrMyBFs;
+    NSString * _szUsername;
+}
+
+@property (nonatomic, retain) NSMutableArray * myBFs;
+@property (nonatomic, retain) NSString * username;
+
++(HUSessionData*)getInstance;
 
 @end
