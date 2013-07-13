@@ -17,7 +17,7 @@
 #define KEY_USERNAME @"username"
 
 typedef enum {bodilyFunctionTypeHiccup = 0, bodilyFunctionTypeFart, bodilyFunctionTypeBurp} bodilyFunctionType;
-@interface BodilyFunctionModel : NSObject <MKAnnotation> {
+@interface BodilyFunctionModel : NSManagedObject <MKAnnotation> {
     bodilyFunctionType _type;
     double _timestamp;
     double _latitude;
@@ -32,10 +32,10 @@ typedef enum {bodilyFunctionTypeHiccup = 0, bodilyFunctionTypeFart, bodilyFuncti
 @property (nonatomic, retain) NSString * username;
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 
--(id)initWithType:(bodilyFunctionType)type timestamp:(double)timestamp latitude:(double)latitude longitude:(double)longitude username:(NSString*)username;
+-(id)initWithType:(bodilyFunctionType)type timestamp:(double)timestamp latitude:(double)latitude longitude:(double)longitude username:(NSString *)username;
 -(id)initWithData:(NSDictionary*)data;
--(void)saveIt;
--(void)saveItWithSuccessBlock:(PFBooleanResultBlock)success;
+-(void)saveToParse;
+-(void)saveToParseWithSuccessBlock:(PFBooleanResultBlock)success;
 +(NSString*)stringForType:(bodilyFunctionType)type;
 +(bodilyFunctionType)typeForString:(NSString*)szType;
 

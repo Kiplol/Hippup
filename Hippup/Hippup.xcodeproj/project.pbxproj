@@ -38,6 +38,16 @@
 		3750CCD21791F1910040ACB0 /* bg1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3750CCD01791F1910040ACB0 /* bg1.png */; };
 		3750CCD31791F1910040ACB0 /* bg1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3750CCD11791F1910040ACB0 /* bg1@2x.png */; };
 		3750CCD61791F3C10040ACB0 /* HUSessionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3750CCD51791F3C10040ACB0 /* HUSessionData.m */; };
+		3750CCE21791FF9C0040ACB0 /* pinGray.png in Resources */ = {isa = PBXBuildFile; fileRef = 3750CCD81791FF9C0040ACB0 /* pinGray.png */; };
+		3750CCE31791FF9C0040ACB0 /* pinGray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3750CCD91791FF9C0040ACB0 /* pinGray@2x.png */; };
+		3750CCE41791FF9C0040ACB0 /* pinGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 3750CCDA1791FF9C0040ACB0 /* pinGreen.png */; };
+		3750CCE51791FF9C0040ACB0 /* pinGreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3750CCDB1791FF9C0040ACB0 /* pinGreen@2x.png */; };
+		3750CCE61791FF9C0040ACB0 /* pinOrange.png in Resources */ = {isa = PBXBuildFile; fileRef = 3750CCDC1791FF9C0040ACB0 /* pinOrange.png */; };
+		3750CCE71791FF9C0040ACB0 /* pinOrange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3750CCDD1791FF9C0040ACB0 /* pinOrange@2x.png */; };
+		3750CCE81791FF9C0040ACB0 /* pinPurple.png in Resources */ = {isa = PBXBuildFile; fileRef = 3750CCDE1791FF9C0040ACB0 /* pinPurple.png */; };
+		3750CCE91791FF9C0040ACB0 /* pinPurple@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3750CCDF1791FF9C0040ACB0 /* pinPurple@2x.png */; };
+		3750CCEA1791FF9C0040ACB0 /* pinRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 3750CCE01791FF9C0040ACB0 /* pinRed.png */; };
+		3750CCEB1791FF9C0040ACB0 /* pinRed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3750CCE11791FF9C0040ACB0 /* pinRed@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +91,16 @@
 		3750CCD11791F1910040ACB0 /* bg1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg1@2x.png"; sourceTree = "<group>"; };
 		3750CCD41791F3C10040ACB0 /* HUSessionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HUSessionData.h; path = Models/HUSessionData.h; sourceTree = "<group>"; };
 		3750CCD51791F3C10040ACB0 /* HUSessionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HUSessionData.m; path = Models/HUSessionData.m; sourceTree = "<group>"; };
+		3750CCD81791FF9C0040ACB0 /* pinGray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinGray.png; sourceTree = "<group>"; };
+		3750CCD91791FF9C0040ACB0 /* pinGray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinGray@2x.png"; sourceTree = "<group>"; };
+		3750CCDA1791FF9C0040ACB0 /* pinGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinGreen.png; sourceTree = "<group>"; };
+		3750CCDB1791FF9C0040ACB0 /* pinGreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinGreen@2x.png"; sourceTree = "<group>"; };
+		3750CCDC1791FF9C0040ACB0 /* pinOrange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinOrange.png; sourceTree = "<group>"; };
+		3750CCDD1791FF9C0040ACB0 /* pinOrange@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinOrange@2x.png"; sourceTree = "<group>"; };
+		3750CCDE1791FF9C0040ACB0 /* pinPurple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinPurple.png; sourceTree = "<group>"; };
+		3750CCDF1791FF9C0040ACB0 /* pinPurple@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinPurple@2x.png"; sourceTree = "<group>"; };
+		3750CCE01791FF9C0040ACB0 /* pinRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinRed.png; sourceTree = "<group>"; };
+		3750CCE11791FF9C0040ACB0 /* pinRed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinRed@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,8 +236,26 @@
 			children = (
 				3750CCD01791F1910040ACB0 /* bg1.png */,
 				3750CCD11791F1910040ACB0 /* bg1@2x.png */,
+				3750CCD71791FF9C0040ACB0 /* Map */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		3750CCD71791FF9C0040ACB0 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				3750CCD81791FF9C0040ACB0 /* pinGray.png */,
+				3750CCD91791FF9C0040ACB0 /* pinGray@2x.png */,
+				3750CCDA1791FF9C0040ACB0 /* pinGreen.png */,
+				3750CCDB1791FF9C0040ACB0 /* pinGreen@2x.png */,
+				3750CCDC1791FF9C0040ACB0 /* pinOrange.png */,
+				3750CCDD1791FF9C0040ACB0 /* pinOrange@2x.png */,
+				3750CCDE1791FF9C0040ACB0 /* pinPurple.png */,
+				3750CCDF1791FF9C0040ACB0 /* pinPurple@2x.png */,
+				3750CCE01791FF9C0040ACB0 /* pinRed.png */,
+				3750CCE11791FF9C0040ACB0 /* pinRed@2x.png */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +317,16 @@
 				3750CC941790F2F30040ACB0 /* MainStoryboard.storyboard in Resources */,
 				3750CCD21791F1910040ACB0 /* bg1.png in Resources */,
 				3750CCD31791F1910040ACB0 /* bg1@2x.png in Resources */,
+				3750CCE21791FF9C0040ACB0 /* pinGray.png in Resources */,
+				3750CCE31791FF9C0040ACB0 /* pinGray@2x.png in Resources */,
+				3750CCE41791FF9C0040ACB0 /* pinGreen.png in Resources */,
+				3750CCE51791FF9C0040ACB0 /* pinGreen@2x.png in Resources */,
+				3750CCE61791FF9C0040ACB0 /* pinOrange.png in Resources */,
+				3750CCE71791FF9C0040ACB0 /* pinOrange@2x.png in Resources */,
+				3750CCE81791FF9C0040ACB0 /* pinPurple.png in Resources */,
+				3750CCE91791FF9C0040ACB0 /* pinPurple@2x.png in Resources */,
+				3750CCEA1791FF9C0040ACB0 /* pinRed.png in Resources */,
+				3750CCEB1791FF9C0040ACB0 /* pinRed@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

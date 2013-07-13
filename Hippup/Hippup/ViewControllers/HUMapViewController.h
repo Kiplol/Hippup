@@ -11,9 +11,11 @@
 
 @interface HUMapViewController : UIViewController {
     IBOutlet MKMapView * _mapView;
-    NSMutableArray * _arrBodilyFunctions;
+    NSArray * _arrMyBodilyFunctions;
+    NSMutableArray * _arrOthersBodilyFunctions;
     double _minLat, _minLong, _maxLat, _maxLong;
     CLLocationManager * _locationManager;
 }
 
+-(void)reloadBFData;
 @end

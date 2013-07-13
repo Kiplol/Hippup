@@ -8,6 +8,7 @@
 
 #import "BodilyFunctionModel.h"
 #import <Parse/Parse.h>
+#import "HUAppDelegate.h"
 
 @implementation BodilyFunctionModel
 @synthesize type = _type;
@@ -18,46 +19,51 @@
 
 -(id)initWithType:(bodilyFunctionType)type timestamp:(double)timestamp latitude:(double)latitude longitude:(double)longitude username:(NSString *)username
 {
-    if((self = [super init]))
-    {
-        _type = type;
+    HUAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"BodilyFunctionModel" inManagedObjectContext:context];
+    self = [self initWithEntity:entity insertIntoManagedObjectContext:nil];
+    if (self != nil) {
         _timestamp = timestamp;
         _latitude = latitude;
         _longitude = longitude;
         _username = username;
+        _type = type;
+        if (context != nil)
+            [context insertObject:self];
     }
     return self;
 }
 
 -(id)initWithData:(NSDictionary*)data
 {
-    if((self = [super init]))
-    {
         NSString * szType = [data objectForKey:KEY_BODILY_FUNCTION_TYPE];
         NSNumber * numTimestamp = [data objectForKey:KEY_TIMESTAMP];
         NSNumber * numLat = [data objectForKey:KEY_LATITUDE];
         NSNumber * numLong = [data objectForKey:KEY_LONGITUDE];
         NSString * username = [data objectForKey:KEY_USERNAME];
         
-        _type = [BodilyFunctionModel typeForString:szType];
+        bodilyFunctionType type = [BodilyFunctionModel typeForString:szType];
         NSAssert(numTimestamp, @"timestamp must not be nil");
-        _timestamp = [numTimestamp doubleValue];
+        double timestamp = [numTimestamp doubleValue];
         NSAssert(numLat, @"latitude must not be nil");
-        _latitude = [numLat doubleValue];
+        double latitude = [numLat doubleValue];
         NSAssert(numLong, @"longitude must not be nil");
-        _longitude = [numLong doubleValue];
+        double longitude = [numLong doubleValue];
         NSAssert(username, @"username must not be nil");
-        _username = username;
-    }
-    return self;
+        return [self initWithType:type
+                      timestamp:timestamp
+                       latitude:latitude
+                      longitude:longitude
+                       username:username];
 }
 
--(void)saveIt
+-(void)saveToParse
 {
-    [self saveItWithSuccessBlock:nil];
+    [self saveToParseWithSuccessBlock:nil];
 }
 
--(void)saveItWithSuccessBlock:(PFBooleanResultBlock)success
+-(void)saveToParseWithSuccessBlock:(PFBooleanResultBlock)success
 {
     PFObject *testObject = [PFObject objectWithClassName:@"BodilyFunction"];
     [testObject setObject:[BodilyFunctionModel stringForType:_type] forKey:KEY_BODILY_FUNCTION_TYPE];

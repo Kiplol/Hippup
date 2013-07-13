@@ -9,6 +9,7 @@
 #import "HUMapViewController.h"
 #import <Parse/Parse.h>
 #import "BodilyFunctionModel.h"
+#import "BodilyFunctionManager.h"
 #import <CoreLocation/CoreLocation.h>
 
 @interface HUMapViewController () <CLLocationManagerDelegate>
@@ -23,7 +24,17 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        _arrOthersBodilyFunctions = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
+- (id) initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        _arrOthersBodilyFunctions = [[NSMutableArray alloc] init];
+        _arrMyBodilyFunctions = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -31,6 +42,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self reloadBFData];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -42,16 +54,12 @@
         _locationManager.delegate = self;
     }
     [_locationManager startUpdatingLocation];
-    
-    //Prep
-    if(_arrBodilyFunctions)
-    {
-        [_arrBodilyFunctions removeAllObjects];
-    }
-    else
-    {
-        _arrBodilyFunctions = [[NSMutableArray alloc] init];
-    }
+}
+
+-(void)reloadBFData
+{
+    [_arrOthersBodilyFunctions removeAllObjects];
+    _arrMyBodilyFunctions = [[BodilyFunctionManager getInstance] bodilyFunctionsForUser:[PFUser currentUser].username];
     _minLat = _minLong = INT_MAX;
     _maxLat = _maxLong = INT_MIN;
     
@@ -74,14 +82,13 @@
                     _maxLong = bf.longitude;
                 if(bf.longitude < _minLong)
                     _minLong = bf.longitude;
-                [_arrBodilyFunctions addObject:bf];
+                [_arrOthersBodilyFunctions addObject:bf];
             }
             [self dropPins];
         }
-
+        
     }];
 }
-
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
@@ -113,10 +120,44 @@
 -(void)dropPins
 {
     [self clearPins];
-    for(BodilyFunctionModel * bf in _arrBodilyFunctions)
+    for(BodilyFunctionModel * bf in _arrOthersBodilyFunctions)
     {
         [_mapView addAnnotation:bf];
     }
+    for(BodilyFunctionModel * bf in _arrMyBodilyFunctions)
+    {
+        [_mapView addAnnotation:bf];
+    }
+}
+
+- (MKAnnotationView *) mapView: (MKMapView *) mapView viewForAnnotation: (id<MKAnnotation>) annotation {
+    // reuse a view, if one exists
+    MKAnnotationView *aView;
+    if([annotation isKindOfClass:[BodilyFunctionModel class]])
+    {
+        BodilyFunctionModel * bf = (BodilyFunctionModel*)annotation;
+        BOOL isMe = [bf.username isEqualToString:[PFUser currentUser].username];
+        if(isMe)
+        {
+            aView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"me"];
+            if (!aView)
+            {
+                aView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"me"];
+                aView.image = [UIImage imageNamed:@"pinRed.png"];
+            }
+            
+        }
+        else
+        {
+            aView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"others"];
+            if (!aView)
+            {
+                aView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"others"];
+                aView.image = [UIImage imageNamed:@"pinPurple.png"];
+            }
+        }
+    }
+    return aView;
 }
 -(void)clearPins
 {

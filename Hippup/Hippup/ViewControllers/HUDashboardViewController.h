@@ -17,4 +17,5 @@
 }
 
 -(IBAction)hiccupPressed:(id)sender;
+-(void)initialLoad;
 @end

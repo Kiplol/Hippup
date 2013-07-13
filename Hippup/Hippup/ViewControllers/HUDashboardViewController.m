@@ -9,6 +9,7 @@
 #import "HUDashboardViewController.h"
 #import <Parse/Parse.h>
 #import "BodilyFunctionManager.h"
+#import "HUSessionData.h"
 
 @interface HUDashboardViewController ()
 -(void)saveHiccupAtLocation:(CLLocation*)location;
@@ -37,6 +38,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)initialLoad
+{
+    HUSessionData * data = [HUSessionData getInstance];
+    data.myBFs = [NSMutableArray arrayWithArray: [[BodilyFunctionManager getInstance] bodilyFunctionsForUser:data.username]];
+}
 -(IBAction)hiccupPressed:(id)sender
 {
     if(_locationManager == nil)
@@ -48,6 +54,7 @@
     [_locationManager startUpdatingLocation];
 }
 
+#pragma mark - Location
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     NSLog(@"Location: %@", [newLocation description]);
@@ -59,9 +66,9 @@
          
                                                                    username:[PFUser currentUser].username];
     
-    [newBF saveItWithSuccessBlock:^(BOOL succeeded, NSError *error) {
+    [newBF saveToParseWithSuccessBlock:^(BOOL succeeded, NSError *error) {
         _btnHiccup.enabled = YES;
-        [[BodilyFunctionManager getInstance] saveBodilyFunction:newBF];
+        [[HUSessionData getInstance].myBFs addObject:newBF];
     }];
 }
 

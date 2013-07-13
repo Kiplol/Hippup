@@ -8,6 +8,7 @@
 
 #import "HUAppDelegate.h"
 #import <Parse/Parse.h>
+#import "HUSessionData.h"
 
 @implementation HUAppDelegate
 
@@ -23,6 +24,7 @@
     [PFUser enableAutomaticUser];
     PFUser * user = [PFUser currentUser];
     [user save];
+    [HUSessionData getInstance].username = user.username;
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     return YES;
 }

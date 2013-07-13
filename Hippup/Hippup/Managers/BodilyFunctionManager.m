@@ -22,26 +22,6 @@
     
     return pInstance;
 }
--(void)saveBodilyFunction:(BodilyFunctionModel*)bf
-{
-    HUAppDelegate *appDelegate =
-    [[UIApplication sharedApplication] delegate];
-    
-    NSManagedObjectContext *context =
-    [appDelegate managedObjectContext];
-    NSManagedObject *newBF;
-    newBF = [NSEntityDescription
-                  insertNewObjectForEntityForName:@"BodilyFunctionModel"
-                  inManagedObjectContext:context];
-    [newBF setValue:[NSNumber numberWithDouble:bf.timestamp] forKey:KEY_TIMESTAMP];
-    [newBF setValue:[NSNumber numberWithDouble:bf.latitude] forKey:KEY_LATITUDE];
-    [newBF setValue:[NSNumber numberWithDouble:bf.longitude] forKey:KEY_LONGITUDE];
-    [newBF setValue:bf.username forKey:KEY_USERNAME];
-    [newBF setValue:[NSNumber numberWithInt:bf.type] forKey:KEY_BODILY_FUNCTION_TYPE];
-    
-    NSError *error;
-    [context save:&error];
-}
 
 -(NSArray*)bodilyFunctionsForUser:(NSString*)username
 {
@@ -55,8 +35,7 @@
     NSManagedObjectContext *context =
     [appDelegate managedObjectContext];
     
-    NSEntityDescription *entityDesc =
-    [NSEntityDescription entityForName:@"BodilyFunctionModel"
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"BodilyFunctionModel"
                 inManagedObjectContext:context];
     
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
