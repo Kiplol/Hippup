@@ -17,11 +17,24 @@
 		3750CC8D1790F2F30040ACB0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3750CC8C1790F2F30040ACB0 /* Default.png */; };
 		3750CC8F1790F2F30040ACB0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3750CC8E1790F2F30040ACB0 /* Default@2x.png */; };
 		3750CC911790F2F30040ACB0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3750CC901790F2F30040ACB0 /* Default-568h@2x.png */; };
-		3750CC941790F2F30040ACB0 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3750CC921790F2F30040ACB0 /* MainStoryboard_iPhone.storyboard */; };
-		3750CC971790F2F30040ACB0 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3750CC951790F2F30040ACB0 /* MainStoryboard_iPad.storyboard */; };
+		3750CC941790F2F30040ACB0 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3750CC921790F2F30040ACB0 /* MainStoryboard.storyboard */; };
 		3750CC9A1790F2F30040ACB0 /* Hippup.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3750CC981790F2F30040ACB0 /* Hippup.xcdatamodeld */; };
-		3750CC9D1790F2F30040ACB0 /* HUMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3750CC9C1790F2F30040ACB0 /* HUMasterViewController.m */; };
-		3750CCA01790F2F30040ACB0 /* HUDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3750CC9F1790F2F30040ACB0 /* HUDetailViewController.m */; };
+		3750CCAA1790F4010040ACB0 /* HUDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3750CCA81790F4010040ACB0 /* HUDashboardViewController.m */; };
+		3750CCAD1790F5F50040ACB0 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3750CCAC1790F5F50040ACB0 /* Parse.framework */; };
+		3750CCB71790F6510040ACB0 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3750CCAE1790F6500040ACB0 /* Accelerate.framework */; };
+		3750CCB81790F6510040ACB0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3750CCAF1790F6500040ACB0 /* CFNetwork.framework */; };
+		3750CCB91790F6510040ACB0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3750CCB01790F6500040ACB0 /* CoreLocation.framework */; };
+		3750CCBA1790F6510040ACB0 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3750CCB11790F6500040ACB0 /* libz.1.1.3.dylib */; };
+		3750CCBB1790F6510040ACB0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3750CCB21790F6500040ACB0 /* MobileCoreServices.framework */; };
+		3750CCBC1790F6510040ACB0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3750CCB31790F6500040ACB0 /* QuartzCore.framework */; };
+		3750CCBD1790F6510040ACB0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3750CCB41790F6500040ACB0 /* Security.framework */; };
+		3750CCBE1790F6510040ACB0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3750CCB51790F6500040ACB0 /* StoreKit.framework */; };
+		3750CCBF1790F6510040ACB0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3750CCB61790F6510040ACB0 /* SystemConfiguration.framework */; };
+		3750CCC11790F6970040ACB0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3750CCC01790F6970040ACB0 /* AudioToolbox.framework */; };
+		3750CCC4179108D10040ACB0 /* BodilyFunctionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3750CCC3179108D10040ACB0 /* BodilyFunctionModel.m */; };
+		3750CCC8179112620040ACB0 /* HUMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3750CCC7179112620040ACB0 /* HUMapViewController.m */; };
+		3750CCCA179112A00040ACB0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3750CCC9179112A00040ACB0 /* MapKit.framework */; };
+		3750CCCD1791E99E0040ACB0 /* BodilyFunctionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3750CCCC1791E99E0040ACB0 /* BodilyFunctionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,13 +52,28 @@
 		3750CC8C1790F2F30040ACB0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3750CC8E1790F2F30040ACB0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3750CC901790F2F30040ACB0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		3750CC931790F2F30040ACB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		3750CC961790F2F30040ACB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		3750CC931790F2F30040ACB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		3750CC991790F2F30040ACB0 /* Hippup.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hippup.xcdatamodel; sourceTree = "<group>"; };
-		3750CC9B1790F2F30040ACB0 /* HUMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HUMasterViewController.h; sourceTree = "<group>"; };
-		3750CC9C1790F2F30040ACB0 /* HUMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HUMasterViewController.m; sourceTree = "<group>"; };
-		3750CC9E1790F2F30040ACB0 /* HUDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HUDetailViewController.h; sourceTree = "<group>"; };
-		3750CC9F1790F2F30040ACB0 /* HUDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HUDetailViewController.m; sourceTree = "<group>"; };
+		3750CCA71790F4010040ACB0 /* HUDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HUDashboardViewController.h; path = ViewControllers/HUDashboardViewController.h; sourceTree = "<group>"; };
+		3750CCA81790F4010040ACB0 /* HUDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HUDashboardViewController.m; path = ViewControllers/HUDashboardViewController.m; sourceTree = "<group>"; };
+		3750CCAC1790F5F50040ACB0 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		3750CCAE1790F6500040ACB0 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		3750CCAF1790F6500040ACB0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		3750CCB01790F6500040ACB0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3750CCB11790F6500040ACB0 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		3750CCB21790F6500040ACB0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		3750CCB31790F6500040ACB0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3750CCB41790F6500040ACB0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		3750CCB51790F6500040ACB0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		3750CCB61790F6510040ACB0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3750CCC01790F6970040ACB0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3750CCC2179108D10040ACB0 /* BodilyFunctionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BodilyFunctionModel.h; sourceTree = "<group>"; };
+		3750CCC3179108D10040ACB0 /* BodilyFunctionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BodilyFunctionModel.m; sourceTree = "<group>"; };
+		3750CCC6179112620040ACB0 /* HUMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HUMapViewController.h; path = ViewControllers/HUMapViewController.h; sourceTree = "<group>"; };
+		3750CCC7179112620040ACB0 /* HUMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HUMapViewController.m; path = ViewControllers/HUMapViewController.m; sourceTree = "<group>"; };
+		3750CCC9179112A00040ACB0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3750CCCB1791E99E0040ACB0 /* BodilyFunctionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BodilyFunctionManager.h; path = Managers/BodilyFunctionManager.h; sourceTree = "<group>"; };
+		3750CCCC1791E99E0040ACB0 /* BodilyFunctionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BodilyFunctionManager.m; path = Managers/BodilyFunctionManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,10 +81,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3750CCCA179112A00040ACB0 /* MapKit.framework in Frameworks */,
+				3750CCC11790F6970040ACB0 /* AudioToolbox.framework in Frameworks */,
+				3750CCB71790F6510040ACB0 /* Accelerate.framework in Frameworks */,
+				3750CCB81790F6510040ACB0 /* CFNetwork.framework in Frameworks */,
+				3750CCB91790F6510040ACB0 /* CoreLocation.framework in Frameworks */,
+				3750CCBA1790F6510040ACB0 /* libz.1.1.3.dylib in Frameworks */,
+				3750CCBB1790F6510040ACB0 /* MobileCoreServices.framework in Frameworks */,
+				3750CCBC1790F6510040ACB0 /* QuartzCore.framework in Frameworks */,
+				3750CCBD1790F6510040ACB0 /* Security.framework in Frameworks */,
+				3750CCBE1790F6510040ACB0 /* StoreKit.framework in Frameworks */,
+				3750CCBF1790F6510040ACB0 /* SystemConfiguration.framework in Frameworks */,
+				3750CC7D1790F2F20040ACB0 /* CoreGraphics.framework in Frameworks */,
 				3750CC791790F2F20040ACB0 /* UIKit.framework in Frameworks */,
 				3750CC7B1790F2F20040ACB0 /* Foundation.framework in Frameworks */,
-				3750CC7D1790F2F20040ACB0 /* CoreGraphics.framework in Frameworks */,
 				3750CC7F1790F2F20040ACB0 /* CoreData.framework in Frameworks */,
+				3750CCAD1790F5F50040ACB0 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +106,7 @@
 		3750CC6C1790F2F20040ACB0 = {
 			isa = PBXGroup;
 			children = (
+				3750CCC9179112A00040ACB0 /* MapKit.framework */,
 				3750CC801790F2F20040ACB0 /* Hippup */,
 				3750CC771790F2F20040ACB0 /* Frameworks */,
 				3750CC761790F2F20040ACB0 /* Products */,
@@ -83,6 +124,17 @@
 		3750CC771790F2F20040ACB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3750CCC01790F6970040ACB0 /* AudioToolbox.framework */,
+				3750CCAE1790F6500040ACB0 /* Accelerate.framework */,
+				3750CCAF1790F6500040ACB0 /* CFNetwork.framework */,
+				3750CCB01790F6500040ACB0 /* CoreLocation.framework */,
+				3750CCB11790F6500040ACB0 /* libz.1.1.3.dylib */,
+				3750CCB21790F6500040ACB0 /* MobileCoreServices.framework */,
+				3750CCB31790F6500040ACB0 /* QuartzCore.framework */,
+				3750CCB41790F6500040ACB0 /* Security.framework */,
+				3750CCB51790F6500040ACB0 /* StoreKit.framework */,
+				3750CCB61790F6510040ACB0 /* SystemConfiguration.framework */,
+				3750CCAC1790F5F50040ACB0 /* Parse.framework */,
 				3750CC781790F2F20040ACB0 /* UIKit.framework */,
 				3750CC7A1790F2F20040ACB0 /* Foundation.framework */,
 				3750CC7C1790F2F20040ACB0 /* CoreGraphics.framework */,
@@ -96,12 +148,10 @@
 			children = (
 				3750CC891790F2F20040ACB0 /* HUAppDelegate.h */,
 				3750CC8A1790F2F20040ACB0 /* HUAppDelegate.m */,
-				3750CC921790F2F30040ACB0 /* MainStoryboard_iPhone.storyboard */,
-				3750CC951790F2F30040ACB0 /* MainStoryboard_iPad.storyboard */,
-				3750CC9B1790F2F30040ACB0 /* HUMasterViewController.h */,
-				3750CC9C1790F2F30040ACB0 /* HUMasterViewController.m */,
-				3750CC9E1790F2F30040ACB0 /* HUDetailViewController.h */,
-				3750CC9F1790F2F30040ACB0 /* HUDetailViewController.m */,
+				3750CC921790F2F30040ACB0 /* MainStoryboard.storyboard */,
+				3750CCC5179108D90040ACB0 /* Models */,
+				3750CCCE1791F1700040ACB0 /* Managers */,
+				3750CCA61790F3C90040ACB0 /* ViewControllers */,
 				3750CC981790F2F30040ACB0 /* Hippup.xcdatamodeld */,
 				3750CC811790F2F20040ACB0 /* Supporting Files */,
 			);
@@ -120,6 +170,35 @@
 				3750CC901790F2F30040ACB0 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3750CCA61790F3C90040ACB0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3750CCA71790F4010040ACB0 /* HUDashboardViewController.h */,
+				3750CCA81790F4010040ACB0 /* HUDashboardViewController.m */,
+				3750CCC6179112620040ACB0 /* HUMapViewController.h */,
+				3750CCC7179112620040ACB0 /* HUMapViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3750CCC5179108D90040ACB0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3750CCC2179108D10040ACB0 /* BodilyFunctionModel.h */,
+				3750CCC3179108D10040ACB0 /* BodilyFunctionModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3750CCCE1791F1700040ACB0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				3750CCCB1791E99E0040ACB0 /* BodilyFunctionManager.h */,
+				3750CCCC1791E99E0040ACB0 /* BodilyFunctionManager.m */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,8 +257,7 @@
 				3750CC8D1790F2F30040ACB0 /* Default.png in Resources */,
 				3750CC8F1790F2F30040ACB0 /* Default@2x.png in Resources */,
 				3750CC911790F2F30040ACB0 /* Default-568h@2x.png in Resources */,
-				3750CC941790F2F30040ACB0 /* MainStoryboard_iPhone.storyboard in Resources */,
-				3750CC971790F2F30040ACB0 /* MainStoryboard_iPad.storyboard in Resources */,
+				3750CC941790F2F30040ACB0 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,8 +271,10 @@
 				3750CC871790F2F20040ACB0 /* main.m in Sources */,
 				3750CC8B1790F2F20040ACB0 /* HUAppDelegate.m in Sources */,
 				3750CC9A1790F2F30040ACB0 /* Hippup.xcdatamodeld in Sources */,
-				3750CC9D1790F2F30040ACB0 /* HUMasterViewController.m in Sources */,
-				3750CCA01790F2F30040ACB0 /* HUDetailViewController.m in Sources */,
+				3750CCAA1790F4010040ACB0 /* HUDashboardViewController.m in Sources */,
+				3750CCC4179108D10040ACB0 /* BodilyFunctionModel.m in Sources */,
+				3750CCC8179112620040ACB0 /* HUMapViewController.m in Sources */,
+				3750CCCD1791E99E0040ACB0 /* BodilyFunctionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,20 +289,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		3750CC921790F2F30040ACB0 /* MainStoryboard_iPhone.storyboard */ = {
+		3750CC921790F2F30040ACB0 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3750CC931790F2F30040ACB0 /* en */,
 			);
-			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		3750CC951790F2F30040ACB0 /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3750CC961790F2F30040ACB0 /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
+			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -289,10 +361,15 @@
 		3750CCA41790F2F30040ACB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Hippup/Hippup-Prefix.pch";
 				INFOPLIST_FILE = "Hippup/Hippup-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -300,10 +377,15 @@
 		3750CCA51790F2F30040ACB0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Hippup/Hippup-Prefix.pch";
 				INFOPLIST_FILE = "Hippup/Hippup-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

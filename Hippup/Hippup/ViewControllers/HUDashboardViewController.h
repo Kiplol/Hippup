@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import "BodilyFunctionModel.h"
 
-@interface HUDashboardViewController : UIViewController
+@interface HUDashboardViewController : UIViewController <CLLocationManagerDelegate> {
+    IBOutlet UIButton * _btnHiccup;
+    IBOutlet UIButton * _btnMap;
+    CLLocationManager * _locationManager;
+}
 
+-(IBAction)hiccupPressed:(id)sender;
 @end

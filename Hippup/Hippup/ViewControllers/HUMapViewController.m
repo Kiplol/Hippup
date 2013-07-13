@@ -7,9 +7,14 @@
 //
 
 #import "HUMapViewController.h"
+#import <Parse/Parse.h>
+#import "BodilyFunctionModel.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface HUMapViewController ()
-
+@interface HUMapViewController () <CLLocationManagerDelegate>
+-(void)repositionMap;
+-(void)dropPins;
+-(void)clearPins;
 @end
 
 @implementation HUMapViewController
@@ -26,9 +31,97 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if(_locationManager == nil)
+    {
+        _locationManager = [[CLLocationManager alloc] init];
+        _locationManager.delegate = self;
+    }
+    [_locationManager startUpdatingLocation];
+    
+    //Prep
+    if(_arrBodilyFunctions)
+    {
+        [_arrBodilyFunctions removeAllObjects];
+    }
+    else
+    {
+        _arrBodilyFunctions = [[NSMutableArray alloc] init];
+    }
+    _minLat = _minLong = INT_MAX;
+    _maxLat = _maxLong = INT_MIN;
+    
+    double past24Hours = [[NSDate date] timeIntervalSince1970] - (60 * 60 * 24);
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"BodilyFunction"];
+    [query whereKey:KEY_USERNAME notEqualTo:[PFUser currentUser].username];
+    [query whereKey:KEY_TIMESTAMP greaterThan:[NSNumber numberWithDouble:past24Hours]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *bfs, NSError *error) {
+        if(bfs.count)
+        {
+            for(NSDictionary * bfData in bfs)
+            {
+                BodilyFunctionModel * bf = [[BodilyFunctionModel alloc] initWithData:bfData];
+                if(bf.latitude > _maxLat)
+                    _maxLat = bf.latitude;
+                if(bf.latitude < _minLat)
+                    _minLat = bf.latitude;
+                if(bf.longitude > _maxLong)
+                    _maxLong = bf.longitude;
+                if(bf.longitude < _minLong)
+                    _minLong = bf.longitude;
+                [_arrBodilyFunctions addObject:bf];
+            }
+            [self dropPins];
+        }
+
+    }];
+}
+
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"Location: %@", [newLocation description]);
+    [manager stopUpdatingLocation];
+    MKCoordinateRegion region;
+    region.center = newLocation.coordinate;
+    region.span = MKCoordinateSpanMake(.005, .005);
+    [_mapView setRegion:region animated:YES];
+    [_mapView regionThatFits:region];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+	NSLog(@"Error: %@", [error description]);
+}
+
+-(void)repositionMap
+{
+    double latDelta = _maxLat - _minLat;
+    double longDelta = _maxLong - _minLong;
+    MKCoordinateSpan span = MKCoordinateSpanMake(latDelta, longDelta);
+    MKCoordinateRegion region;
+    region.span = span;
+    region.center = CLLocationCoordinate2DMake(_maxLat - (latDelta * 0.5f), _maxLong - (longDelta * 0.5f));
+    [_mapView setRegion:region animated:YES];
+    [_mapView regionThatFits:region];
+}
+-(void)dropPins
+{
+    [self clearPins];
+    for(BodilyFunctionModel * bf in _arrBodilyFunctions)
+    {
+        [_mapView addAnnotation:bf];
+    }
+}
+-(void)clearPins
+{
+    
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

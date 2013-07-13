@@ -7,8 +7,7 @@
 //
 
 #import "HUAppDelegate.h"
-
-#import "HUMasterViewController.h"
+#import <Parse/Parse.h>
 
 @implementation HUAppDelegate
 
@@ -19,19 +18,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-        UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-        splitViewController.delegate = (id)navigationController.topViewController;
-        
-        UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
-        HUMasterViewController *controller = (HUMasterViewController *)masterNavigationController.topViewController;
-        controller.managedObjectContext = self.managedObjectContext;
-    } else {
-        UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-        HUMasterViewController *controller = (HUMasterViewController *)navigationController.topViewController;
-        controller.managedObjectContext = self.managedObjectContext;
-    }
+    [Parse setApplicationId:@"Ssg7YeUQWR0900N7wp5nKc487c7Ncy5bgQsAU2jU"
+                  clientKey:@"HgGR8kjSI1Zqfdif9GZlUGrncKgPWdduvcYOHlEs"];
+    [PFUser enableAutomaticUser];
+    PFUser * user = [PFUser currentUser];
+    [user save];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     return YES;
 }
 							
