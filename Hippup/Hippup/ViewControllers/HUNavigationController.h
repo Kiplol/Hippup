@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "HUDashboardViewController.h"
 #import "HUMapViewController.h"
+#import  "HUInfoViewController.h"
 
 @interface HUNavigationController : UINavigationController {
     HUMapViewController * _mapVC;
     HUDashboardViewController * _dashVC;
+    HUInfoViewController * _infoVC;
     UIViewController * _containerVC;
     UIViewController * _currentVC;
 }

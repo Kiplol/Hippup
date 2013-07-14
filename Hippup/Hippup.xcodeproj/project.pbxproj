@@ -68,6 +68,10 @@
 		3761D8B6179320EF00E5ED27 /* nav_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 3761D8B0179320EF00E5ED27 /* nav_left.png */; };
 		3761D8B7179320EF00E5ED27 /* nav_right_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 3761D8B1179320EF00E5ED27 /* nav_right_pressed.png */; };
 		3761D8B8179320EF00E5ED27 /* nav_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 3761D8B2179320EF00E5ED27 /* nav_right.png */; };
+		3761D8BB179325CD00E5ED27 /* HUInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3761D8BA179325CD00E5ED27 /* HUInfoViewController.m */; };
+		3761D8BE17932A3700E5ED27 /* info_table_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3761D8BC17932A3700E5ED27 /* info_table_bg.png */; };
+		3761D8BF17932A3700E5ED27 /* info_table_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3761D8BD17932A3700E5ED27 /* info_table_bg@2x.png */; };
+		3761D8C217932FC700E5ED27 /* HUInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3761D8C117932FC700E5ED27 /* HUInfoCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -142,6 +146,12 @@
 		3761D8B0179320EF00E5ED27 /* nav_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_left.png; sourceTree = "<group>"; };
 		3761D8B1179320EF00E5ED27 /* nav_right_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_right_pressed.png; sourceTree = "<group>"; };
 		3761D8B2179320EF00E5ED27 /* nav_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_right.png; sourceTree = "<group>"; };
+		3761D8B9179325CD00E5ED27 /* HUInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HUInfoViewController.h; path = ViewControllers/HUInfoViewController.h; sourceTree = "<group>"; };
+		3761D8BA179325CD00E5ED27 /* HUInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HUInfoViewController.m; path = ViewControllers/HUInfoViewController.m; sourceTree = "<group>"; };
+		3761D8BC17932A3700E5ED27 /* info_table_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_table_bg.png; sourceTree = "<group>"; };
+		3761D8BD17932A3700E5ED27 /* info_table_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info_table_bg@2x.png"; sourceTree = "<group>"; };
+		3761D8C017932FC700E5ED27 /* HUInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HUInfoCell.h; path = Views/HUInfoCell.h; sourceTree = "<group>"; };
+		3761D8C117932FC700E5ED27 /* HUInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HUInfoCell.m; path = Views/HUInfoCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +255,8 @@
 		3750CCA61790F3C90040ACB0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3761D8B9179325CD00E5ED27 /* HUInfoViewController.h */,
+				3761D8BA179325CD00E5ED27 /* HUInfoViewController.m */,
 				3750CCFD179255B10040ACB0 /* HUNavigationController.h */,
 				3750CCFE179255B10040ACB0 /* HUNavigationController.m */,
 				3750CCA71790F4010040ACB0 /* HUDashboardViewController.h */,
@@ -276,6 +288,8 @@
 		3750CCCF1791F1910040ACB0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3761D8BC17932A3700E5ED27 /* info_table_bg.png */,
+				3761D8BD17932A3700E5ED27 /* info_table_bg@2x.png */,
 				3761D8A01793204F00E5ED27 /* nav_center_pressed@2x.png */,
 				3761D8A11793204F00E5ED27 /* nav_center@2x.png */,
 				3761D8A21793204F00E5ED27 /* nav_left_pressed@2x.png */,
@@ -323,6 +337,8 @@
 			children = (
 				3750CCF8179253670040ACB0 /* HUSegmentNavView.h */,
 				3750CCF9179253670040ACB0 /* HUSegmentNavView.m */,
+				3761D8C017932FC700E5ED27 /* HUInfoCell.h */,
+				3761D8C117932FC700E5ED27 /* HUInfoCell.m */,
 				3750CCFB179253D10040ACB0 /* HUSegmentNavView.xib */,
 			);
 			name = Views;
@@ -416,6 +432,8 @@
 				3761D8B6179320EF00E5ED27 /* nav_left.png in Resources */,
 				3761D8B7179320EF00E5ED27 /* nav_right_pressed.png in Resources */,
 				3761D8B8179320EF00E5ED27 /* nav_right.png in Resources */,
+				3761D8BE17932A3700E5ED27 /* info_table_bg.png in Resources */,
+				3761D8BF17932A3700E5ED27 /* info_table_bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +453,8 @@
 				3750CCCD1791E99E0040ACB0 /* BodilyFunctionManager.m in Sources */,
 				3750CCFA179253670040ACB0 /* HUSegmentNavView.m in Sources */,
 				3750CCFF179255B10040ACB0 /* HUNavigationController.m in Sources */,
+				3761D8BB179325CD00E5ED27 /* HUInfoViewController.m in Sources */,
+				3761D8C217932FC700E5ED27 /* HUInfoCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
