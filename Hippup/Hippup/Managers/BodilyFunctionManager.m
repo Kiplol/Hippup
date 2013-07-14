@@ -29,11 +29,9 @@
 }
 -(NSArray*)bodilyFunctionsForUser:(NSString*)username since:(double)timestamp
 {
-    HUAppDelegate *appDelegate =
-    [[UIApplication sharedApplication] delegate];
+    HUAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     
-    NSManagedObjectContext *context =
-    [appDelegate managedObjectContext];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
     
     NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"BodilyFunctionModel"
                 inManagedObjectContext:context];
@@ -43,7 +41,7 @@
     
     NSPredicate * usernamePred = [NSPredicate predicateWithFormat:@"(username = %@)", username];
     NSPredicate * timestampPred = [NSPredicate predicateWithFormat:@"(timestamp >= %f)", timestamp];
-    if(username && timestamp > -1)
+    if(username && timestamp > 0)
     {
         NSPredicate * compoundPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[usernamePred, timestampPred]];
         [request setPredicate:compoundPredicate];
@@ -52,7 +50,7 @@
     {
         [request setPredicate:usernamePred];
     }
-    else if(timestamp > -1)
+    else if(timestamp > 0)
     {
         [request setPredicate:timestampPred];
     }

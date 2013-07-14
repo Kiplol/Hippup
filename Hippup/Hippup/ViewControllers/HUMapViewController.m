@@ -16,6 +16,7 @@
 -(void)repositionMap;
 -(void)dropPins;
 -(void)clearPins;
+-(IBAction)backPressed;
 @end
 
 @implementation HUMapViewController
@@ -25,6 +26,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         _arrOthersBodilyFunctions = [[NSMutableArray alloc] init];
+        _arrMyBodilyFunctions = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -48,6 +50,12 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self centerMapOnMe];
+    [self dropPins];
+}
+
+-(void)centerMapOnMe
+{
     if(_locationManager == nil)
     {
         _locationManager = [[CLLocationManager alloc] init];
@@ -55,7 +63,6 @@
     }
     [_locationManager startUpdatingLocation];
 }
-
 -(void)reloadBFData
 {
     [_arrOthersBodilyFunctions removeAllObjects];
@@ -162,6 +169,10 @@
 -(void)clearPins
 {
     
+}
+-(IBAction)backPressed
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)didReceiveMemoryWarning
 {
