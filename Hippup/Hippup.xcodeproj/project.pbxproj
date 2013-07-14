@@ -37,7 +37,6 @@
 		3750CCCD1791E99E0040ACB0 /* BodilyFunctionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3750CCCC1791E99E0040ACB0 /* BodilyFunctionManager.m */; };
 		3750CCD21791F1910040ACB0 /* bg1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3750CCD01791F1910040ACB0 /* bg1.png */; };
 		3750CCD31791F1910040ACB0 /* bg1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3750CCD11791F1910040ACB0 /* bg1@2x.png */; };
-		3750CCD61791F3C10040ACB0 /* HUSessionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3750CCD51791F3C10040ACB0 /* HUSessionData.m */; };
 		3750CCE21791FF9C0040ACB0 /* pinGray.png in Resources */ = {isa = PBXBuildFile; fileRef = 3750CCD81791FF9C0040ACB0 /* pinGray.png */; };
 		3750CCE31791FF9C0040ACB0 /* pinGray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3750CCD91791FF9C0040ACB0 /* pinGray@2x.png */; };
 		3750CCE41791FF9C0040ACB0 /* pinGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 3750CCDA1791FF9C0040ACB0 /* pinGreen.png */; };
@@ -98,8 +97,6 @@
 		3750CCCC1791E99E0040ACB0 /* BodilyFunctionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BodilyFunctionManager.m; path = Managers/BodilyFunctionManager.m; sourceTree = "<group>"; };
 		3750CCD01791F1910040ACB0 /* bg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg1.png; sourceTree = "<group>"; };
 		3750CCD11791F1910040ACB0 /* bg1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg1@2x.png"; sourceTree = "<group>"; };
-		3750CCD41791F3C10040ACB0 /* HUSessionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HUSessionData.h; path = Models/HUSessionData.h; sourceTree = "<group>"; };
-		3750CCD51791F3C10040ACB0 /* HUSessionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HUSessionData.m; path = Models/HUSessionData.m; sourceTree = "<group>"; };
 		3750CCD81791FF9C0040ACB0 /* pinGray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinGray.png; sourceTree = "<group>"; };
 		3750CCD91791FF9C0040ACB0 /* pinGray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinGray@2x.png"; sourceTree = "<group>"; };
 		3750CCDA1791FF9C0040ACB0 /* pinGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinGreen.png; sourceTree = "<group>"; };
@@ -241,8 +238,6 @@
 			children = (
 				3750CCC2179108D10040ACB0 /* BodilyFunctionModel.h */,
 				3750CCC3179108D10040ACB0 /* BodilyFunctionModel.m */,
-				3750CCD41791F3C10040ACB0 /* HUSessionData.h */,
-				3750CCD51791F3C10040ACB0 /* HUSessionData.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -382,7 +377,6 @@
 				3750CCC4179108D10040ACB0 /* BodilyFunctionModel.m in Sources */,
 				3750CCC8179112620040ACB0 /* HUMapViewController.m in Sources */,
 				3750CCCD1791E99E0040ACB0 /* BodilyFunctionManager.m in Sources */,
-				3750CCD61791F3C10040ACB0 /* HUSessionData.m in Sources */,
 				3750CCFA179253670040ACB0 /* HUSegmentNavView.m in Sources */,
 				3750CCFF179255B10040ACB0 /* HUNavigationController.m in Sources */,
 			);

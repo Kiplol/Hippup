@@ -9,7 +9,6 @@
 #import "HUDashboardViewController.h"
 #import <Parse/Parse.h>
 #import "BodilyFunctionManager.h"
-#import "HUSessionData.h"
 
 @interface HUDashboardViewController ()
 -(void)saveHiccupAtLocation:(CLLocation*)location;
@@ -44,8 +43,7 @@
 
 -(void)initialLoad
 {
-    HUSessionData * data = [HUSessionData getInstance];
-    data.myBFs = [NSMutableArray arrayWithArray: [[BodilyFunctionManager getInstance] bodilyFunctionsForUser:data.username]];
+
 }
 -(IBAction)hiccupPressed:(id)sender
 {
@@ -72,7 +70,6 @@
     
     [newBF saveToParseWithSuccessBlock:^(BOOL succeeded, NSError *error) {
         _btnHiccup.enabled = YES;
-        [[HUSessionData getInstance].myBFs addObject:newBF];
     }];
 }
 

@@ -24,7 +24,9 @@
         UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:[NSBundle mainBundle]];
         _dashVC = [storyboard instantiateViewControllerWithIdentifier:@"Dash"];
         _mapVC = [storyboard instantiateViewControllerWithIdentifier:@"Map"];
-        [self addChildViewController:_mapVC];
+        _containerVC = [[UIViewController alloc] init];
+        [_containerVC addChildViewController:_dashVC];
+        [_containerVC addChildViewController:_mapVC];
     }
     return self;
 }
@@ -32,7 +34,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setViewControllers:[NSArray arrayWithObject:_dashVC]];
+    [self setViewControllers:[NSArray arrayWithObject:_containerVC]];
+    _dashVC.view.frame = _containerVC.view.bounds;
+    [_containerVC.view addSubview:_dashVC.view];
+    _currentVC = _dashVC;
+    
 	HUSegmentNavView * husnv = [[[NSBundle mainBundle] loadNibNamed:@"HUSegmentNavView" owner:nil options:nil] objectAtIndex:0];
     husnv.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
     husnv.center = CGPointMake(self.view.frame.size.width * 0.5f, self.view.frame.size.height - husnv.frame.size.height - 15.0);
@@ -50,17 +56,68 @@
 }
 
 -(void)mapTapped
-{
-    [self setViewControllers:[NSArray arrayWithObject:_mapVC] animated:YES];
-    [_mapVC reloadBFData];
+{    
+    if(_mapVC == _currentVC)
+        return;
+    UIViewController * lastVC = _currentVC;
+    _currentVC = _mapVC;
+    
+    _mapVC.view.center = CGPointMake(_containerVC.view.bounds.size.width +  _mapVC.view.bounds.size.width * 0.5, _mapVC.view.center.y);
+    [_containerVC transitionFromViewController:lastVC
+                              toViewController:_currentVC
+                                      duration:0.5
+                                       options:UIViewAnimationOptionBeginFromCurrentState
+                                    animations:^{
+                                        lastVC.view.center = CGPointMake(0 - lastVC.view.bounds.size.width * 0.5, lastVC.view.center.y);
+                                        _currentVC.view.center = CGPointMake(_containerVC.view.bounds.size.width * 0.5,
+                                                                             _containerVC.view.bounds.size.height * 0.5);
+                                        //animations
+                                    } completion:^(BOOL finished) {
+                                        //completion
+                                        [_currentVC didMoveToParentViewController:_containerVC];
+                                        [_mapVC reloadBFData];
+                                    }];
 }
 -(void)dashTapped
 {
-    [self setViewControllers:[NSArray arrayWithObject:_dashVC] animated:YES];
+    if(_dashVC == _currentVC)
+        return;
+    UIViewController * lastVC = _currentVC;
+    _currentVC = _dashVC;
+    
+    BOOL moveLeft = (lastVC == _mapVC);
+    if(moveLeft)
+    {
+        _dashVC.view.center = CGPointMake(0 - _mapVC.view.bounds.size.width * 0.5, _mapVC.view.center.y);
+    }
+    else
+    {
+       _dashVC.view.center = CGPointMake(_containerVC.view.bounds.size.width + _mapVC.view.bounds.size.width * 0.5, _mapVC.view.center.y);
+    }
+    
+    [_containerVC transitionFromViewController:lastVC
+                              toViewController:_currentVC
+                                      duration:0.5
+                                       options:UIViewAnimationOptionBeginFromCurrentState
+                                    animations:^{
+                                        if(moveLeft)
+                                        {
+                                            lastVC.view.center = CGPointMake(_containerVC.view.bounds.size.width + lastVC.view.bounds.size.width * 0.5, lastVC.view.center.y);
+                                        }
+                                        else
+                                        {
+                                            lastVC.view.center = CGPointMake(0 - lastVC.view.bounds.size.width * 0.5, lastVC.view.center.y);
+                                        }
+                                        _currentVC.view.center = CGPointMake(_containerVC.view.bounds.size.width * 0.5,
+                                                                             _containerVC.view.bounds.size.height * 0.5);
+                                        //animations
+                                    } completion:^(BOOL finished) {
+                                        //completion
+                                        [_currentVC didMoveToParentViewController:_containerVC];
+                                    }];
 }
 -(void)infoTapped
 {
     
 }
-
 @end

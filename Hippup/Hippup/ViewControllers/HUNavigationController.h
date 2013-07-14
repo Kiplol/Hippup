@@ -13,7 +13,8 @@
 @interface HUNavigationController : UINavigationController {
     HUMapViewController * _mapVC;
     HUDashboardViewController * _dashVC;
-    
+    UIViewController * _containerVC;
+    UIViewController * _currentVC;
 }
 
 @end
