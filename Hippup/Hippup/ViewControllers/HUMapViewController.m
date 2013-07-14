@@ -44,14 +44,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self reloadBFData];
+    //[self reloadBFData];
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self centerMapOnMe];
-    [self dropPins];
 }
 
 -(void)centerMapOnMe
