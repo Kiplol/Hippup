@@ -47,20 +47,27 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<int key="IBUIButtonType">1</int>
+						<bool key="IBUIAdjustsImageWhenHighlighted">NO</bool>
 						<string key="IBUINormalTitle">INFO</string>
-						<object class="NSColor" key="IBUIHighlightedTitleColor" id="618302883">
+						<object class="NSColor" key="IBUIHighlightedTitleColor" id="352946606">
 							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MQA</bytes>
+							<bytes key="NSWhite">MC4zMzMzMzMzMzMzAA</bytes>
 						</object>
-						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-						</object>
+						<reference key="IBUISelectedTitleColor" ref="352946606"/>
+						<reference key="IBUINormalTitleColor" ref="352946606"/>
 						<object class="NSColor" key="IBUINormalTitleShadowColor" id="469368870">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC41AA</bytes>
 						</object>
+						<object class="NSCustomResource" key="IBUIHighlightedBackgroundImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">nav_left_pressed.png</string>
+						</object>
+						<object class="NSCustomResource" key="IBUISelectedBackgroundImage" id="323760195">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">nav_left.png</string>
+						</object>
+						<reference key="IBUINormalBackgroundImage" ref="323760195"/>
 						<object class="IBUIFontDescription" key="IBUIFontDescription" id="328818120">
 							<int key="type">2</int>
 							<double key="pointSize">15</double>
@@ -84,13 +91,21 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
+						<bool key="IBUIAdjustsImageWhenHighlighted">NO</bool>
 						<string key="IBUINormalTitle">DASH</string>
-						<reference key="IBUIHighlightedTitleColor" ref="618302883"/>
-						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-						</object>
+						<reference key="IBUIHighlightedTitleColor" ref="352946606"/>
+						<reference key="IBUISelectedTitleColor" ref="352946606"/>
+						<reference key="IBUINormalTitleColor" ref="352946606"/>
 						<reference key="IBUINormalTitleShadowColor" ref="469368870"/>
+						<object class="NSCustomResource" key="IBUIHighlightedBackgroundImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">nav_center_pressed.png</string>
+						</object>
+						<object class="NSCustomResource" key="IBUISelectedBackgroundImage" id="446326781">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">nav_center.png</string>
+						</object>
+						<reference key="IBUINormalBackgroundImage" ref="446326781"/>
 						<reference key="IBUIFontDescription" ref="328818120"/>
 						<reference key="IBUIFont" ref="379838152"/>
 					</object>
@@ -107,13 +122,21 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
+						<bool key="IBUIAdjustsImageWhenHighlighted">NO</bool>
 						<string key="IBUINormalTitle">MAP</string>
-						<reference key="IBUIHighlightedTitleColor" ref="618302883"/>
-						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-						</object>
+						<reference key="IBUIHighlightedTitleColor" ref="352946606"/>
+						<reference key="IBUISelectedTitleColor" ref="352946606"/>
+						<reference key="IBUINormalTitleColor" ref="352946606"/>
 						<reference key="IBUINormalTitleShadowColor" ref="469368870"/>
+						<object class="NSCustomResource" key="IBUIHighlightedBackgroundImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">nav_right_pressed.png</string>
+						</object>
+						<object class="NSCustomResource" key="IBUISelectedBackgroundImage" id="608556165">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">nav_right.png</string>
+						</object>
+						<reference key="IBUINormalBackgroundImage" ref="608556165"/>
 						<reference key="IBUIFontDescription" ref="328818120"/>
 						<reference key="IBUIFont" ref="379838152"/>
 					</object>
@@ -210,8 +233,11 @@
 				<string key="5.CustomClassName">HUSegmentNavView</string>
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<real value="1" key="6.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="7.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<real value="2" key="7.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<real value="2" key="8.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
@@ -254,6 +280,14 @@
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="nav_center.png">{186, 84}</string>
+			<string key="nav_center_pressed.png">{93, 42}</string>
+			<string key="nav_left.png">{93, 42}</string>
+			<string key="nav_left_pressed.png">{93, 42}</string>
+			<string key="nav_right.png">{92, 42}</string>
+			<string key="nav_right_pressed.png">{92, 42}</string>
+		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>
 </archive>

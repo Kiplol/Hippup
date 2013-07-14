@@ -90,9 +90,8 @@
                     _minLong = bf.longitude;
                 [_arrOthersBodilyFunctions addObject:bf];
             }
-            [self dropPins];
         }
-        
+        [self dropPins];
     }];
 }
 

@@ -22,13 +22,21 @@
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+-(void)awakeFromNib
 {
-    // Drawing code
+    [super awakeFromNib];
+    [_btnDashboard addTarget:self action:@selector(selectNavButton:) forControlEvents:UIControlEventTouchUpInside];
+    [_btnInfo addTarget:self action:@selector(selectNavButton:) forControlEvents:UIControlEventTouchUpInside];
+    [_btnMap addTarget:self action:@selector(selectNavButton:) forControlEvents:UIControlEventTouchUpInside];
 }
-*/
 
+-(void)selectNavButton:(UIButton *)btn
+{
+    if(btn.selected)
+        return;
+    _btnMap.selected = NO;
+    _btnInfo.selected = NO;
+    _btnDashboard.selected = NO;
+    btn.selected = YES;
+}
 @end

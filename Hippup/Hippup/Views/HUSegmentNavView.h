@@ -18,4 +18,6 @@
 @property (nonatomic, readonly) UIButton * btnMap;
 @property (nonatomic, readonly) UIButton * btnInfo;
 
+-(void)selectNavButton:(UIButton*)btn;
+
 @end

@@ -24,6 +24,10 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"BodilyFunctionModel" inManagedObjectContext:context];
     self = [self initWithEntity:entity insertIntoManagedObjectContext:nil];
     if (self != nil) {
+        [self setPrimitiveValue:[NSNumber numberWithDouble:timestamp] forKey:KEY_TIMESTAMP];
+        [self setPrimitiveValue:[NSNumber numberWithDouble:longitude] forKey:KEY_LONGITUDE];
+        [self setPrimitiveValue:[NSNumber numberWithDouble:latitude] forKey:KEY_LATITUDE];
+        [self setPrimitiveValue:username forKey:KEY_USERNAME];
         _timestamp = timestamp;
         _latitude = latitude;
         _longitude = longitude;
@@ -111,11 +115,11 @@
     }
 }
 
--(NSString*)description
-{
-    return [NSString stringWithFormat:@"%@\ntype=%@\ntimestamp=%f\nlatitude=%f\nlongitude=%f\nusername=%@", [super description],
-            [BodilyFunctionModel stringForType:_type], _timestamp,_latitude, _longitude, _username];
-}
+//-(NSString*)description
+//{
+//    return [NSString stringWithFormat:@"%@\ntype=%@\ntimestamp=%f\nlatitude=%f\nlongitude=%f\nusername=%@", [super description],
+//            [BodilyFunctionModel stringForType:_type], _timestamp,_latitude, _longitude, _username];
+//}
 
 -(CLLocationCoordinate2D)coordinate
 {

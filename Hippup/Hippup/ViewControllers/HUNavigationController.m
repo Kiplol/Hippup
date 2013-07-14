@@ -39,6 +39,10 @@
     [_containerVC.view addSubview:_dashVC.view];
     _currentVC = _dashVC;
     
+    UIImageView * bg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg2.png"]];
+    [self.view addSubview:bg];
+    [self.view sendSubviewToBack:bg];
+    
 	HUSegmentNavView * husnv = [[[NSBundle mainBundle] loadNibNamed:@"HUSegmentNavView" owner:nil options:nil] objectAtIndex:0];
     husnv.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
     husnv.center = CGPointMake(self.view.frame.size.width * 0.5f, self.view.frame.size.height - husnv.frame.size.height - 15.0);
