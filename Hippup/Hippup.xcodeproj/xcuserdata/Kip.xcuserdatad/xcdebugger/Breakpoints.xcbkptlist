@@ -21,12 +21,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Hippup/BodilyFunctionModel.m"
-         timestampString = "395516215.561426"
+         timestampString = "395616458.561657"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "113"
-         endingLineNumber = "113"
+         startingLineNumber = "109"
+         endingLineNumber = "109"
          landmarkName = "+typeForString:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Hippup/Managers/BodilyFunctionManager.m"
+         timestampString = "395616668.930343"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "62"
+         endingLineNumber = "62"
+         landmarkName = "-bodilyFunctionsForUser:since:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

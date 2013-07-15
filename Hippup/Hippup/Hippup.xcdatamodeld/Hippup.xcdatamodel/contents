@@ -11,6 +11,6 @@
         <userInfo/>
     </entity>
     <elements>
-        <element name="BodilyFunctionModel" positionX="261" positionY="189" width="128" height="118"/>
+        <element name="BodilyFunctionModel" positionX="261" positionY="189" width="128" height="120"/>
     </elements>
 </model>

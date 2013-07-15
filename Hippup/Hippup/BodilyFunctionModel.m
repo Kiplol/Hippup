@@ -11,28 +11,24 @@
 #import "HUAppDelegate.h"
 
 @implementation BodilyFunctionModel
-@synthesize type = _type;
-@synthesize timestamp = _timestamp;
-@synthesize latitude = _latitude;
-@synthesize longitude = _longitude;
-@synthesize username = _username;
+@synthesize latitude;
+@synthesize longitude;
+@synthesize type;
+@synthesize username;
+@synthesize timestamp;
 
--(id)initWithType:(bodilyFunctionType)type timestamp:(double)timestamp latitude:(double)latitude longitude:(double)longitude username:(NSString *)username
+-(id)initWithType:(bodilyFunctionType)aType timestamp:(double)aTimestamp latitude:(double)aLatitude longitude:(double)aLongitude username:(NSString *)aUsername
 {
     HUAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"BodilyFunctionModel" inManagedObjectContext:context];
     self = [self initWithEntity:entity insertIntoManagedObjectContext:nil];
     if (self != nil) {
-        [self setPrimitiveValue:[NSNumber numberWithDouble:timestamp] forKey:KEY_TIMESTAMP];
-        [self setPrimitiveValue:[NSNumber numberWithDouble:longitude] forKey:KEY_LONGITUDE];
-        [self setPrimitiveValue:[NSNumber numberWithDouble:latitude] forKey:KEY_LATITUDE];
-        [self setPrimitiveValue:username forKey:KEY_USERNAME];
-        _timestamp = timestamp;
-        _latitude = latitude;
-        _longitude = longitude;
-        _username = username;
-        _type = type;
+        self.timestamp = aTimestamp;
+        self.latitude = aLatitude;
+        self.longitude = aLongitude;
+        self.username = aUsername;
+        self.type = aType;
         if (context != nil)
             [context insertObject:self];
     }
@@ -70,11 +66,11 @@
 -(void)saveToParseWithSuccessBlock:(PFBooleanResultBlock)success
 {
     PFObject *testObject = [PFObject objectWithClassName:@"BodilyFunction"];
-    [testObject setObject:[BodilyFunctionModel stringForType:_type] forKey:KEY_BODILY_FUNCTION_TYPE];
-    [testObject setObject:[NSNumber numberWithDouble:_timestamp] forKey:KEY_TIMESTAMP];
-    [testObject setObject:[NSNumber numberWithDouble:_latitude] forKey:KEY_LATITUDE];
-    [testObject setObject:[NSNumber numberWithDouble:_longitude] forKey:KEY_LONGITUDE];
-    [testObject setObject:_username forKey:KEY_USERNAME];
+    [testObject setObject:[BodilyFunctionModel stringForType:self.type] forKey:KEY_BODILY_FUNCTION_TYPE];
+    [testObject setObject:[NSNumber numberWithDouble:self.timestamp] forKey:KEY_TIMESTAMP];
+    [testObject setObject:[NSNumber numberWithDouble:self.latitude] forKey:KEY_LATITUDE];
+    [testObject setObject:[NSNumber numberWithDouble:self.longitude] forKey:KEY_LONGITUDE];
+    [testObject setObject:self.username forKey:KEY_USERNAME];
     [testObject saveInBackgroundWithBlock:success];
 }
 
@@ -123,6 +119,6 @@
 
 -(CLLocationCoordinate2D)coordinate
 {
-    return CLLocationCoordinate2DMake(_latitude, _longitude);
+    return CLLocationCoordinate2DMake(self.latitude, self.longitude);
 }
 @end
