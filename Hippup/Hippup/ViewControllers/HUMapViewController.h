@@ -16,6 +16,7 @@
     NSMutableArray * _arrOthersBodilyFunctions;
     double _minLat, _minLong, _maxLat, _maxLong;
     CLLocationManager * _locationManager;
+    BOOL _bInitialZoomIn;
 }
 
 -(void)reloadBFData;

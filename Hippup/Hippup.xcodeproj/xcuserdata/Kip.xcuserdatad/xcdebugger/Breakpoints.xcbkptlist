@@ -33,13 +33,13 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Hippup/Managers/BodilyFunctionManager.m"
-         timestampString = "395616668.930343"
+         filePath = "Hippup/ViewControllers/HUMapViewController.m"
+         timestampString = "395625976.096271"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "62"
-         endingLineNumber = "62"
-         landmarkName = "-bodilyFunctionsForUser:since:"
+         startingLineNumber = "52"
+         endingLineNumber = "52"
+         landmarkName = "-viewWillAppear:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

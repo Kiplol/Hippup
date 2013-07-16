@@ -38,6 +38,7 @@
     
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entityDesc];
+    [request setReturnsObjectsAsFaults:NO];  //Is there a way to get around doing this?
     
     NSPredicate * usernamePred = [NSPredicate predicateWithFormat:@"(username = %@)", username];
     NSPredicate * timestampPred = [NSPredicate predicateWithFormat:@"(timestamp >= %f)", timestamp];

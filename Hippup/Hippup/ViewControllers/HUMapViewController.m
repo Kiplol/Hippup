@@ -50,17 +50,24 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self centerMapOnMe];
-}
-
--(void)centerMapOnMe
-{
     if(_locationManager == nil)
     {
         _locationManager = [[CLLocationManager alloc] init];
         _locationManager.delegate = self;
     }
+    _bInitialZoomIn = YES;
     [_locationManager startUpdatingLocation];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [_locationManager stopUpdatingLocation];
+}
+
+-(void)centerMapOnMe
+{
+
 }
 -(void)reloadBFData
 {
@@ -98,12 +105,15 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     NSLog(@"Location: %@", [newLocation description]);
-    [manager stopUpdatingLocation];
-    MKCoordinateRegion region;
-    region.center = newLocation.coordinate;
-    region.span = MKCoordinateSpanMake(.005, .005);
-    [_mapView setRegion:region animated:YES];
-    [_mapView regionThatFits:region];
+    if(_bInitialZoomIn)
+    {
+        MKCoordinateRegion region;
+        region.center = newLocation.coordinate;
+        region.span = MKCoordinateSpanMake(.005, .005);
+        [_mapView setRegion:region animated:YES];
+        [_mapView regionThatFits:region];
+    }
+    _bInitialZoomIn = NO;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
