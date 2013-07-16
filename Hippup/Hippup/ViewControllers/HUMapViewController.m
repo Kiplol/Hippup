@@ -17,6 +17,7 @@
 -(void)dropPins;
 -(void)clearPins;
 -(IBAction)backPressed;
+-(void)centerMapOnLocation:(CLLocation*)location;
 @end
 
 @implementation HUMapViewController
@@ -65,9 +66,13 @@
     [_locationManager stopUpdatingLocation];
 }
 
--(void)centerMapOnMe
+-(void)centerMapOnLocation:(CLLocation *)location
 {
-
+    MKCoordinateRegion region;
+    region.center = location.coordinate;
+    region.span = MKCoordinateSpanMake(.005, .005);
+    [_mapView setRegion:region animated:YES];
+    [_mapView regionThatFits:region];
 }
 -(void)reloadBFData
 {
@@ -107,11 +112,7 @@
     NSLog(@"Location: %@", [newLocation description]);
     if(_bInitialZoomIn)
     {
-        MKCoordinateRegion region;
-        region.center = newLocation.coordinate;
-        region.span = MKCoordinateSpanMake(.005, .005);
-        [_mapView setRegion:region animated:YES];
-        [_mapView regionThatFits:region];
+        [self centerMapOnLocation:newLocation];
     }
     _bInitialZoomIn = NO;
 }

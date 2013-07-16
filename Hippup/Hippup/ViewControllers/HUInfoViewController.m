@@ -8,6 +8,7 @@
 
 #import "HUInfoViewController.h"
 #import "HUInfoCell.h"
+#import "BodilyFunctionManager.h"
 #import <Parse/Parse.h>
 
 #define ROW_USERNAME 0
@@ -24,16 +25,30 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        _arrMyBFs = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    if((self = [super initWithCoder:aDecoder]))
+    {
+        _arrMyBFs = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    [_collectionView registerClass:[HUInfoCell class] forCellWithReuseIdentifier:@"infoCell"];
 	// Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    //Refresh my bodily functions
+    _arrMyBFs = [NSMutableArray arrayWithArray:[[BodilyFunctionManager getInstance] bodilyFunctionsForUser:[PFUser currentUser].username]];
+    [_collectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,15 +70,28 @@
     }
     else if(indexPath.row == ROW_BF_COUNT)
     {
-        cell.keyLabel.text = @"BFS";
-        cell.valueLabel.text = @"";
+        cell.keyLabel.text = @"Hiccups";
+        cell.valueLabel.text = [NSString stringWithFormat:@"%d", _arrMyBFs.count];
     }
+    else
+    {
+        int idx = indexPath.row - TOTAL_ROWS;
+        BodilyFunctionModel * bfm = [_arrMyBFs objectAtIndex:idx];
+        cell.keyLabel.text = [BodilyFunctionModel stringForType:bfm.type];
+
+        NSDate *theDate = [NSDate dateWithTimeIntervalSince1970:bfm.timestamp];
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"MMM dd, hh:mm:ss a"];
+        NSString *dateString = [dateFormat stringFromDate:theDate];
+        cell.valueLabel.text = dateString;
+    }
+    [cell setNeedsLayout];
     return cell;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return TOTAL_ROWS;
+    return TOTAL_ROWS + _arrMyBFs.count;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView

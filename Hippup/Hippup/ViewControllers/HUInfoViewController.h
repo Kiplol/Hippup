@@ -11,6 +11,7 @@
 @interface HUInfoViewController : UIViewController <UICollectionViewDataSource> {
     IBOutlet UICollectionView * _collectionView;
     NSString * _szUsername;
+    NSMutableArray * _arrMyBFs;
 }
 
 @end

@@ -20,6 +20,5 @@
 }
 
 -(void)reloadBFData;
--(void)centerMapOnMe;
 
 @end
